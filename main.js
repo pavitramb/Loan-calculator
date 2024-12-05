@@ -9,14 +9,14 @@ document.getElementById('loan-form').addEventListener('submit', function(e){
 function calculate(e){
     const amount = document.getElementById('loan_amount');
     const interest = document.getElementById('interest');
-    const months = document.getElementById('months');
+    const years = document.getElementById('years');
     const monthlyPayment = document.getElementById('monthly_payment');
     const totalAmount = document.getElementById('total_amount');
     const totalInterest = document.getElementById('total_interest');
     
     const principal = parseFloat(amount.value);
     const calculatedInterest = parseFloat(interest.value) / 100 / 12;
-    const calculatedPayments = parseFloat(months.value) / 12;
+    const calculatedPayments = parseFloat(months.value) * 12;
     const x = Math.pow(1 + calculatedInterest, calculatedPayments);
     const monthly = (principal * x * calculatedInterest) / (x - 1);
     
